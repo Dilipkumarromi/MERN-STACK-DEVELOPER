@@ -15,6 +15,12 @@ async function dbConnection(){
     let _collection = await db.collection('Registration')
     let data=await _collection.find({}).toArray();
     console.log(`Found documents`,data);
+
+
+    //insert data into collections
+
+    const post=await _collection.insert({ name:"Rohit",Age:20})
+    console.log(`Inserted posts`,post );
 }
 dbConnection()
 module.exports = dbConnection;
